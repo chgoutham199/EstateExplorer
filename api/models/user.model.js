@@ -1,6 +1,4 @@
 import mongoose from "mongoose";
-import { string } from "postcss-selector-parser";
-
 const userSchema= new mongoose.Schema({
     username:{
         type:String,
@@ -15,8 +13,7 @@ const userSchema= new mongoose.Schema({
     password:{
         type:String,
         required:true,
-       
-    },
+       },
 },{timestamps:true});
 
 const User = mongoose.model('User',userSchema);
