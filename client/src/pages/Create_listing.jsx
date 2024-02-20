@@ -5,7 +5,7 @@ const App = () => {
       <h1 className="text-3xl font-semibold text-center my-7">
         Create Listing
       </h1>
-      <form className="flex flex-col sm:flex-row">
+      <form className="flex flex-col sm:flex-row gap-4">
         <div className="flex flex-col gap-4">
           <input
             type="text"
@@ -104,13 +104,14 @@ const App = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-2">
-            <p>Images</p>
-            <p>The first image will be the cover (max 6)</p>
-            <div className="flex flex-col">
-              <input type="file" multiple />
-              <button type="submit">Upload</button>
+          <div className="flex flex-col flex-1">
+            <p className="font-semibold">Images
+            <span className='font-normal text-gray-600 ml-2'>The first image will be the cover (max 6)</span></p>
+            <div className="flex gap-4">
+              <input type="file" id="images" accept='image/*' multiple />
+              <button className="text-green-700 border-green-700 p-3 hover:shadow-lg disabled:opacity-80" type="submit">Upload</button>
             </div>
+            <button className="bg-slate-700 text-white">Create Listing</button>
           </div>
         </div>
       </form>
