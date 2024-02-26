@@ -8,10 +8,12 @@ const CreateListing = () => {
   const [formData,setFormData]=useState({
     imageUrls:[],
   });
-
+ const [imageUploadError, setImageUploadError]=useState(false);
   console.log(formData);
   const handleImageSubmit=(e)=>{
-    if(files.length>0 && files.length<7){
+    if(files.length>0 && files.length + formData.imageUrls.length<7){
+      setUploading(true);
+      setImageUploadError(false);
         const promises=[];
         for(let i=0;i<files.length;i++){
           promises.push(storeImage(files[i]));
@@ -21,12 +23,19 @@ const CreateListing = () => {
             ...formData,imageUrls:formData.imageUrls.concat(urls),
           });
           setImageUploadError(false);
-          setUplo
+          setUploading(false);
+        })
+        .catch((err)=>{
+          setImageUploadError('Image upload failed(2 mb max per image)');
+          setUploading(false);
         });
+    }else{
+      setImageUploadError('You can only upload 6 images per listing');
+      setUploading(false);
     }
   };
   const storeImage=async(file)=>{
-    return new promises((resolve,reject)=>{
+    return new Promise((resolve,reject)=>{
           const storage=getStorage(app);
           const fileName=new Date().getTime()+file.name;
           const storageRef=ref(storage,fileName);
@@ -46,17 +55,17 @@ const CreateListing = () => {
                 resolve(downloadURL);
               });
             }
-          )
+          );
 
     });
-  }
+  };
   return (
     <main className="p-3 max-w-4xl mx-auto">
       <h1 className="text-3xl font-semibold text-center my-7">
         Create Listing
       </h1>
       <form className="flex flex-col sm:flex-row gap-4">
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 flex-1">
           <input
             type="text"
             placeholder="Name"
@@ -154,7 +163,8 @@ const CreateListing = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col flex-1">
+          </div>
+          <div className="flex flex-col flex-1 gap-4">
             <p className="font-semibold">Images
             <span className='font-normal text-gray-600 ml-2'>The first image will be the cover (max 6)</span></p>
             <div className="flex gap-4">
@@ -163,7 +173,6 @@ const CreateListing = () => {
             </div>
             <button className="bg-slate-700 text-white">Create Listing</button>
           </div>
-        </div>
       </form>
     </main>
   );
