@@ -1,7 +1,7 @@
 import React from "react";
 import {useState} from 'react';
 import {getStorage,getDownloadURL,ref,uploadBytesResumable} from 'firebase/storage';
-import {app} from '../firebase';
+import {app} from '../firebase.js';
 const CreateListing = () => {
   const [files,setFiles]=useState([]);
   // console.log(files);
@@ -9,6 +9,7 @@ const CreateListing = () => {
     imageUrls:[],
   });
  const [imageUploadError, setImageUploadError]=useState(false);
+ const [uploading,setUploading]=useState(false);
   console.log(formData);
   const handleImageSubmit=(e)=>{
     if(files.length>0 && files.length + formData.imageUrls.length<7){
@@ -18,7 +19,8 @@ const CreateListing = () => {
         for(let i=0;i<files.length;i++){
           promises.push(storeImage(files[i]));
         }
-        Promise.all(promises).then((urls)=>{
+        Promise.all(promises)
+         .then((urls)=>{
           setFormData({
             ...formData,imageUrls:formData.imageUrls.concat(urls),
           });
@@ -72,7 +74,7 @@ const CreateListing = () => {
             className="border p-3 rounded-lg"
             id="name"
             maxLength="100"
-            minLength="10"
+            minLength="3"
             required
           />
           <textarea
@@ -169,8 +171,17 @@ const CreateListing = () => {
             <span className='font-normal text-gray-600 ml-2'>The first image will be the cover (max 6)</span></p>
             <div className="flex gap-4">
               <input onChange={(e)=>setFiles(e.target.files)} type="file" id="images" accept='image/*' multiple />
-              <button type='button' onClick={handleImageSubmit} className="text-green-700 border-black p-3 hover:shadow-lg disabled:opacity-80">Upload</button>
+              <button type='button' onClick={handleImageSubmit} className="text-green-700 border-green p-3 hover:shadow-lg disabled:opacity-80">{uploading ? 'Uploading...':'Upload'}</button>
             </div>
+            <img src={formData.imageUrls[0]}/>
+            <p className='text-red-700 text-sm'>{imageUploadError && imageUploadError}</p>
+            {
+              formData.imageUrls.length>0 && formData.imageUrls.map((url)=>{
+                <img src={url}/>
+                console.log({url});
+                // <button className="p-3 text-red-700 rounded-lg uppercase hover:opacity-75">Delete</button>
+                // </div>
+              })}
             <button className="bg-slate-700 text-white">Create Listing</button>
           </div>
       </form>
