@@ -10,7 +10,7 @@ const firebaseConfig = {
   projectId: "estateexplorer199",
   storageBucket: "estateexplorer199.appspot.com",
   messagingSenderId: "456840996675",
-  appId: "1:456840996675:web:0e7ee149c5b0151766f1f6"
+  appId: "1:456840996675:web:0e7ee149c5b0151766f1f6",
 }
 
 // Initialize Firebase
