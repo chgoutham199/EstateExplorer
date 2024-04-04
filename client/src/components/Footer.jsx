@@ -7,7 +7,7 @@ import { FaInstagram } from "react-icons/fa";
 export default function Footer (){
   
     return (
-      <footer className="bg-[url('https://images.unsplash.com/photo-1520531158340-44015069e78e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2slMjBhbmQlMjB3aGl0ZSUyMGJ1aWxkaW5nfGVufDB8fDB8fHww')] text-black text-center py-16 px-4">
+      <footer className="bg-[url('https://images.unsplash.com/photo-1520531158340-44015069e78e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2slMjBhbmQlMjB3aGl0ZSUyMGJ1aWxkaW5nfGVufDB8fDB8fHww')] text-black text-center py-16 px-4 bg-contain" >
          <div className='xl:flex xl:justify-around'>
           <div className='mb-12 xl:mb-0'>
           <h1 className='text-xl font-bold mb-4'>EstateExplorer</h1>  
@@ -23,21 +23,19 @@ export default function Footer (){
                 <li>Contact</li>
             </ul>
          </div>
-         <div className='mb-12 xl:mb-0'>
-          <h3> MAIL ID</h3>
+         <div className="mb-12 xl:mb-0">
+          <h3 className="text-xl font-bold mb-4">MAIL ID</h3>
           <a href="mailto:chgoutham199@gmail.com" className='mr-4'>chgoutham199@gmail.com</a>
-          <br/>
+          <br />
           <div className='flex gap-4 mx-auto'>
             <FaWhatsapp />
             <FaInstagram />
             <FaXTwitter />
             <FaLinkedin />
           </div>
-         </div>
+        </div>
           
-          
-
-         </div>
+ </div>
          
 
       </footer>

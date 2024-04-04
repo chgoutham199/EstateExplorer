@@ -10,7 +10,6 @@ import CreateListing from './pages/CreateListing';
 import UpdateListing from './pages/UpdateListing';
 import Listing from './pages/Listing';
 import Search from './pages/Search';
-import Footer from './components/Footer';
 
 export default function App() {
   return (
@@ -32,7 +31,7 @@ export default function App() {
   
     <Route path='*' element={<h1>Page Not Found</h1>} />
     </Routes>
-    <Footer/>
+   
    </BrowserRouter>
     
   );

@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import SwiperCore from 'swiper';
 import 'swiper/css/bundle';
+import Footer from '../components/Footer.jsx';
 import ListingItem from '../components/ListingItem';
 import ContactUs from '../images/ContactUs.jpeg';
 export default function Home() {
@@ -156,6 +157,7 @@ export default function Home() {
 
 
         </div>
+        <Footer/>
       </div>
   );
 }
