@@ -1,4 +1,3 @@
-import React from 'react'
 import {BrowserRouter ,Routes, Route} from "react-router-dom";
 import About from './pages/About';
 import Home from './pages/Home';
@@ -11,11 +10,13 @@ import CreateListing from './pages/CreateListing';
 import UpdateListing from './pages/UpdateListing';
 import Listing from './pages/Listing';
 import Search from './pages/Search';
+import Footer from './components/Footer';
 
 export default function App() {
   return (
     <BrowserRouter>
     <Header />
+    
     <Routes>
     <Route path="/" element={<Home />}/>
     <Route path="/sign-in" element={<SignIn />}/>
@@ -28,9 +29,10 @@ export default function App() {
       <Route path="/create-listing" element={<CreateListing/>}/>
       <Route path='/update-listing/:listingId' element={<UpdateListing />}/>
     </Route >
-    
-
-   </Routes>
+  
+    <Route path='*' element={<h1>Page Not Found</h1>} />
+    </Routes>
+    <Footer/>
    </BrowserRouter>
     
   );
