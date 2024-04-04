@@ -2,7 +2,7 @@ import {useState,useEffect,useRef} from 'react'
 import { useSelector ,useDispatch} from 'react-redux';
 import {getDownloadURL, getStorage, ref, uploadBytesResumable} from 'firebase/storage';
 import { app } from '../firebase.js';
-import {updateUserStart,updateUserSuccess,updateUserFailure, deleteUserFailure, deleteUserStart, deleteUserSuccess, signOutUserStart, signOutUserFailure, signOutUserSuccess} from  '../redux/user/userSlice.js';
+import {updateUserStart,updateUserSuccess,updateUserFailure, deleteUserFailure, deleteUserStart, deleteUserSuccess, signOutUserStart, signOutUserFailure, signOutUserSuccess} from  '../redux/User/userSlice.js';
 import { Link } from 'react-router-dom';
 export default function Profile() {
   const dispatch=useDispatch();
