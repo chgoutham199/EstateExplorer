@@ -5,7 +5,7 @@ import { Navigation } from 'swiper/modules';
 import SwiperCore from 'swiper';
 import 'swiper/css/bundle';
 import ListingItem from '../components/ListingItem';
-
+import ContactUs from '../images/ContactUs.jpeg';
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
   const [saleListings, setSaleListings] = useState([]);
@@ -47,7 +47,6 @@ export default function Home() {
   }, []);
   return (
     <div>
-      {/* top */}
       <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
         <h1 className='text-slate-700 font-bold text-3xl lg:text-6xl'>
           Find your next <span className='text-slate-500'>perfect</span>
@@ -67,8 +66,6 @@ export default function Home() {
           Let's get started...
         </Link>
       </div>
-
-      {/* swiper */}
       <Swiper navigation>
         {offerListings &&
           offerListings.length > 0 &&
@@ -85,8 +82,6 @@ export default function Home() {
             </SwiperSlide>
           ))}
       </Swiper>
-
-      {/* listing results for offer, sale and rent */}
 
       <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10'>
         {offerListings && offerListings.length > 0 && (
@@ -121,6 +116,7 @@ export default function Home() {
               <h2 className='text-2xl font-semibold text-slate-600'>Recent places for sale</h2>
               <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=sale'}>Show more places for sale</Link>
             </div>
+            
             <div className='flex flex-wrap gap-4'>
               {saleListings.map((listing) => (
                 <ListingItem listing={listing} key={listing._id} />
@@ -128,7 +124,38 @@ export default function Home() {
             </div>
           </div>
         )}
+        <div className='contact'>
+  <h1 className="font-bold text-3xl mb-4">CONTACT US</h1>
+  <div class="flex items-center">
+    <div class="w-full max-w-screen-lg mx-auto flex items-center h-96 text-black bg-customblue rounded-lg shadow-md">
+      <div class="flex flex-col px-9">
+        <form>
+          <label><h1 className='text-2xl font-bold mb-2'>Full Name:</h1></label>
+          <div class="border-b border-black mb-4">
+            <input type="text" className="outline-none w-full text-black font-bold border-b-2 border-solid border-black bg-customblue" style={{ width: '550px' }} placeholder="Alayna" />
+          </div>
+          <label><h1 className='text-2xl font-bold mb-2'>Email:</h1></label>
+          <div class="border-b border-black mb-4">
+            <input type="email" className="outline-none w-full text-black font-bold border-b-2 border-solid border-black bg-customblue" style={{ width: '550px' }} placeholder="alaysha@gmail.com" />
+          </div>
+          <label><h1 className='text-2xl font-bold mb-2'>Phone number:</h1></label>
+          <div class="border-b border-black mb-4">
+            <input type="number" className="outline-none w-full text-black font-bold border-b-2 border-solid border-black bg-customblue" style={{ width: '550px' }} placeholder="9000000000" />
+          </div>
+          <label><h1 className='text-2xl font-bold mb-2'>Your Message:</h1></label>
+          <div class="border-b border-black mb-4">
+            <input type="text" className="outline-none w-full text-black font-bold border-b-2 border-solid border-black bg-customblue" style={{ width: '550px' }} placeholder="your message here" />
+          </div>
+          <div className='text-white bg-black rounded-md'><button type='submit' value='Send Message' className='flex items-center justify-center h-full w-full'>SEND MESSAGE</button></div>
+        </form>
       </div>
+      <img class="h-full w-full py-2 pr-4" src={ContactUs} height="50px" style={{marginLeft:"90px"}}></img>
     </div>
+  </div>
+</div>
+
+
+        </div>
+      </div>
   );
 }

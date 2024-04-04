@@ -6,7 +6,11 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        customblue: '#B6D0E2',
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/line-clamp'),
