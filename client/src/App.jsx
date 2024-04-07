@@ -10,7 +10,12 @@ import CreateListing from './pages/CreateListing';
 import UpdateListing from './pages/UpdateListing';
 import Listing from './pages/Listing';
 import Search from './pages/Search';
+<<<<<<< HEAD
+import Footer from './components/Footer';
+import ContactUss from "./pages/ContactUss";
+=======
 
+>>>>>>> 816b3e2107de2e87b2679b261b52c30438818fe7
 export default function App() {
   return (
     <BrowserRouter>
@@ -23,6 +28,7 @@ export default function App() {
     <Route path="/about" element={<About />}/>
     <Route path="/listing/:listingId" element={<Listing />}/>
     <Route path='/search' element={<Search />} />
+    <Route path='/contact' element={<ContactUss/>} />
     <Route element={<PrivateRoute />}>
     <Route path="/profile" element={<Profile />}/>
       <Route path="/create-listing" element={<CreateListing/>}/>
