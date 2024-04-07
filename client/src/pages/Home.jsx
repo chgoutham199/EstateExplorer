@@ -5,7 +5,11 @@ import { Navigation } from 'swiper/modules';
 import SwiperCore from 'swiper';
 import 'swiper/css/bundle';
 import ListingItem from '../components/ListingItem';
-import ContactUs from '../images/ContactUs.jpeg';
+import ContactUss from './ContactUss';
+import Homeimg1 from '../images/Homeimg1.jpeg';
+import AboutUs1 from '../images/AboutUs1.jpeg';
+import AboutUs2 from '../images/AboutUs2.jpeg';
+import AboutUs3 from '../images/AboutUs3.jpeg';
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
   const [saleListings, setSaleListings] = useState([]);
@@ -47,25 +51,37 @@ export default function Home() {
   }, []);
   return (
     <div>
-      <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
-        <h1 className='text-slate-700 font-bold text-3xl lg:text-6xl'>
-          Find your next <span className='text-slate-500'>perfect</span>
-          <br />
-          place with ease
-        </h1>
-        <div className='text-gray-400 text-xs sm:text-sm'>
-          EstateExplorer is the best place to find your next perfect place to
-          live.
-          <br />
-          We have a wide range of properties for you to choose from.
+      <div className='flex flex-col p-12 max-w-full mx-auto'>
+    <div class="flex items-center">
+      <div class="gap-38 w-full max-w-screen-lg mx-auto flex items-center text-black bg-lightgrey rounded-lg shadow-md" style={{height:"500px"}}>
+        <div class="flex flex-col px-9">
+          <p class="font-serif xl:text-xl">EstateExplorer is the platform where
+          <br/>
+          <h1 className='xl:text-5xl font-serif font-medium xl:mb-5'>Your Journey to finding</h1><h1 className='xl:mb-5 xl:text-5xl font-serif font-medium'>the perfect <span className='italic'>home</span></h1><h1 className='xl:text-5xl font-serif font-medium'> begins here</h1><br/></p>
         </div>
-        <Link
-          to={'/search'}
-          className='text-xs sm:text-sm text-blue-800 font-bold hover:underline'
-        >
-          Let's get started...
-        </Link>
+        <img class="h-full w-full py-2 ml-5" src={Homeimg1} style={{width:"400px"}}></img>
       </div>
+    </div>
+  </div>
+  <div className='flex flex-row'>
+  <img className='hidden md:block ml-5 px-28 pb-28' src={AboutUs1} style={{ height:'500px' }}></img>
+  <div className='font-serif flex-col pt-20'>
+  <h1 className='xl:text-3xl pl-40 xl:mb-5 sm:text-2xl'>DreamSpot</h1>
+  <h1 className='xl:text-5xl xl:mb-5'> “ Welcome to where your </h1>
+  <div className='flex sm:ml-20'><h1 className='xl:text-5xl'><span>story begins ” </span></h1>
+  <img className='hidden md:block pl-36' src={AboutUs2} style={{height:"400px"}}></img></div>
+  </div>
+  </div>
+  <div className='relative p-16'>
+  <img src={AboutUs3} className='hidden md:block ml-9 absolute pb-10 h-72 w-auto' style={{height:"500px"}}></img>
+    <div className='hidden md:block bg-gray-300 p-20 w-full left-0 flex flex-col' style={{marginTop:'50px',height:'450px'}}>
+      <h1 className='font-serif text-5xl mb-5' style={{marginLeft:'350px'}}>About Us</h1>
+      <h1 className='font-serif text-2xl' style={{marginLeft:'350px'}}>Welcome to EstateExplorer, your premier destination for real estate services. Real estate encompasses land, buildings, and structures. At EstateExplorer, we understand that buying or selling a home is a significant 
+    decision, and we're here to make the process as smooth as possible. Whether you're a 
+    first-time homebuyer, seasoned investor, or looking to rent, we have the knowledge 
+    and resources to assist you every step of the way.</h1>
+    </div>
+  </div>
       <Swiper navigation>
         {offerListings &&
           offerListings.length > 0 &&
@@ -87,75 +103,50 @@ export default function Home() {
         {offerListings && offerListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent offers</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/search?offer=true'}>Show more offers</Link>
+              <h2 className='text-4xl font-serif'>Recent offers</h2>
+             
             </div>
             <div className='flex flex-wrap gap-4'>
-              {offerListings.map((listing) => (
-                <ListingItem listing={listing} key={listing._id} />
-              ))}
-            </div>
+  {offerListings.map((listing, index) => (
+    index <= 2 && <ListingItem listing={listing} key={listing._id} />
+  ))}
+</div>
+
+            <Link className='text-center xl:ml-96 xl:pl-20 text-semibold text-2xl text-blue-800 hover:underline' to={'/search?offer=true'} style={{marginTop:"20px"}}>Show More Offers</Link>
           </div>
         )}
         {rentListings && rentListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent places for rent</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=rent'}>Show more places for rent</Link>
+              <h2 className='text-4xl font-serif'>Recent places for rent</h2>
+             
             </div>
             <div className='flex flex-wrap gap-4'>
-              {rentListings.map((listing) => (
-                <ListingItem listing={listing} key={listing._id} />
+              {rentListings.map((listing,index) => (
+                index<=2 && <ListingItem listing={listing} key={listing._id} />
               ))}
             </div>
+            <Link className='xl:ml-96 xl:pl-20 text-semibold text-2xl text-blue-800 hover:underline' to={'/search?type=rent'}>View More</Link>
           </div>
         )}
         {saleListings && saleListings.length > 0 && (
           <div className=''>
             <div className='my-3'>
               <h2 className='text-2xl font-semibold text-slate-600'>Recent places for sale</h2>
-              <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=sale'}>Show more places for sale</Link>
+              
             </div>
             
             <div className='flex flex-wrap gap-4'>
-              {saleListings.map((listing) => (
-                <ListingItem listing={listing} key={listing._id} />
+              {saleListings.map((listing,index) => (
+                index<=2 && <ListingItem listing={listing} key={listing._id} />
               ))}
             </div>
+            <Link className='xl:ml-96 xl:pl-20 text-semibold text-2xl text-blue-800 hover:underline' to={'/search?type=sale'}>View More</Link>
           </div>
         )}
-        <div className='contact'>
-  <h1 className="font-bold text-3xl mb-4">CONTACT US</h1>
-  <div class="flex items-center">
-    <div class="w-full max-w-screen-lg mx-auto flex items-center h-96 text-black bg-customblue rounded-lg shadow-md">
-      <div class="flex flex-col px-9">
-        <form>
-          <label><h1 className='text-2xl font-bold mb-2'>Full Name:</h1></label>
-          <div class="border-b border-black mb-4">
-            <input type="text" className="outline-none w-full text-black font-bold border-b-2 border-solid border-black bg-customblue" style={{ width: '550px' }} placeholder="Alayna" />
-          </div>
-          <label><h1 className='text-2xl font-bold mb-2'>Email:</h1></label>
-          <div class="border-b border-black mb-4">
-            <input type="email" className="outline-none w-full text-black font-bold border-b-2 border-solid border-black bg-customblue" style={{ width: '550px' }} placeholder="alaysha@gmail.com" />
-          </div>
-          <label><h1 className='text-2xl font-bold mb-2'>Phone number:</h1></label>
-          <div class="border-b border-black mb-4">
-            <input type="number" className="outline-none w-full text-black font-bold border-b-2 border-solid border-black bg-customblue" style={{ width: '550px' }} placeholder="9000000000" />
-          </div>
-          <label><h1 className='text-2xl font-bold mb-2'>Your Message:</h1></label>
-          <div class="border-b border-black mb-4">
-            <input type="text" className="outline-none w-full text-black font-bold border-b-2 border-solid border-black bg-customblue" style={{ width: '550px' }} placeholder="your message here" />
-          </div>
-          <div className='text-white bg-black rounded-md'><button type='submit' value='Send Message' className='flex items-center justify-center h-full w-full'>SEND MESSAGE</button></div>
-        </form>
-      </div>
-      <img class="h-full w-full py-2 pr-4" src={ContactUs} height="50px" style={{marginLeft:"90px"}}></img>
-    </div>
-  </div>
-</div>
-
-
+         <ContactUss/>
         </div>
       </div>
+
   );
 }

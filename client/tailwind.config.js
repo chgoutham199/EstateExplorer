@@ -9,6 +9,7 @@ export default {
     extend: {
       colors: {
         customblue: '#B6D0E2',
+        lightgrey:'#c9d2d6'
       },
     },
   },

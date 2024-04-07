@@ -11,7 +11,7 @@ import UpdateListing from './pages/UpdateListing';
 import Listing from './pages/Listing';
 import Search from './pages/Search';
 import Footer from './components/Footer';
-
+import ContactUss from "./pages/ContactUss";
 export default function App() {
   return (
     <BrowserRouter>
@@ -24,6 +24,7 @@ export default function App() {
     <Route path="/about" element={<About />}/>
     <Route path="/listing/:listingId" element={<Listing />}/>
     <Route path='/search' element={<Search />} />
+    <Route path='/contact' element={<ContactUss/>} />
     <Route element={<PrivateRoute />}>
     <Route path="/profile" element={<Profile />}/>
       <Route path="/create-listing" element={<CreateListing/>}/>
