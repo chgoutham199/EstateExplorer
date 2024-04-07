@@ -10,8 +10,12 @@ import CreateListing from './pages/CreateListing';
 import UpdateListing from './pages/UpdateListing';
 import Listing from './pages/Listing';
 import Search from './pages/Search';
+<<<<<<< HEAD
 import Footer from './components/Footer';
 import ContactUss from "./pages/ContactUss";
+=======
+
+>>>>>>> 816b3e2107de2e87b2679b261b52c30438818fe7
 export default function App() {
   return (
     <BrowserRouter>
@@ -33,7 +37,7 @@ export default function App() {
   
     <Route path='*' element={<h1>Page Not Found</h1>} />
     </Routes>
-    <Footer/>
+   
    </BrowserRouter>
     
   );
