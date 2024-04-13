@@ -47,7 +47,7 @@ export default function Header() {
                 <Link to="/" onClick={closeMenu}>HOME</Link>
               </li>
               <li className='text-slate-700 hover:underline'>
-                <Link to='/About' onClick={closeMenu}>ABOUT</Link>
+                <Link to='/about' onClick={closeMenu}>ABOUT</Link>
               </li>
               <li className='text-slate-700 hover:underline'>
                 <Link to='search?searchTerm=' onClick={closeMenu}>LISTINGS</Link>

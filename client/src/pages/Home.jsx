@@ -75,7 +75,7 @@ export default function Home() {
   </div>
   <div className='relative p-16'>
   <img src={AboutUs3} className='hidden md:block ml-9 absolute pb-10 h-72 w-auto' style={{height:"500px"}}></img>
-    <div className='hidden md:block bg-gray-300 p-20 w-full left-0 flex flex-col' style={{marginTop:'50px',height:'450px'}}>
+    <div id='about' className='hidden md:block bg-gray-300 p-20 w-full left-0 flex flex-col' style={{marginTop:'50px',height:'450px'}}>
       <h1 className='font-serif text-5xl mb-5' style={{marginLeft:'350px'}}>About Us</h1>
       <h1 className='font-serif text-2xl' style={{marginLeft:'350px'}}>Welcome to EstateExplorer, your premier destination for real estate services. Real estate encompasses land, buildings, and structures. At EstateExplorer, we understand that buying or selling a home is a significant 
     decision, and we're here to make the process as smooth as possible. Whether you're a 

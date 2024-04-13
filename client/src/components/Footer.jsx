@@ -5,7 +5,6 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 export default function Footer (){
-  
     return (
       <footer className="bg-cover bg-center text-black text-center py-16 px-4" style={{backgroundImage: "url('https://images.unsplash.com/photo-1520531158340-44015069e78e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2slMjBhbmQlMjB3aGl0ZSUyMGJ1aWxkaW5nfGVufDB8fDB8fHww')"}}>
          <div className='xl:flex xl:justify-around'>
@@ -40,10 +39,5 @@ export default function Footer (){
          </div>  
 
       </footer>
-
-
     );
-
-
-
 };
