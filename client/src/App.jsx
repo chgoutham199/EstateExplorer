@@ -12,7 +12,6 @@ import Listing from './pages/Listing';
 import Search from './pages/Search';
 import Footer from './components/Footer';
 import ContactUss from "./pages/ContactUss";
-
 export default function App() {
   return (
     <BrowserRouter>
