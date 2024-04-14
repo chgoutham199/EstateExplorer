@@ -33,9 +33,7 @@ export default function Footer (){
             <FaLinkedin />
           </div>
         </div>
-          
-          
-
+        
          </div>  
 
       </footer>
