@@ -7,14 +7,14 @@ export default function About() {
         About EstateExplorer
         </h1>
         <p  className='mb-4 text-slate-700'>
-        Sahand Estate    is a leading real estate agency that specializes in helping clients buy, sell, and rent properties in the most desirable neighborhoods. Our team of experienced agents is dedicated to providing exceptional service and making the buying and selling process as smooth as possible.
-        </p>
-        <p  className='mb-4 text-slate-700'>
-        Our mission is to help our clients achieve their real estate goals by providing expert advice, personalized service, and a deep understanding of the local market. Whether you are looking to buy, sell, or rent a property, we are here to help you every step of the way.
+Welcome to EstateExplorer, the premier platform connecting sellers and buyers in the dynamic world of real estate. Whether you're looking to sell your property or find your dream home, EstateExplorer is your go-to destination for seamless transactions and unparalleled service.
+At EstateExplorer, we're dedicated to bridging the gap between sellers and buyers, making the process of buying or selling a property as smooth and efficient as possible. Our platform offers a user-friendly interface, powerful search tools, and a vast network of listings to help you find the perfect match for your real estate needs.
 
-        </p>
-        <p className='mb-4 text-slate-700'>
-        Our team of agents has a wealth of experience and knowledge in the real estate industry, and we are committed to providing the highest level of service to our clients. We believe that buying or selling a property should be an exciting and rewarding experience, and we are dedicated to making that a reality for each and every one of our clients.
+Backed by a team of experienced real estate professionals and cutting-edge technology, EstateExplorer empowers sellers to showcase their properties to a wide audience of motivated buyers. Likewise, buyers can explore a diverse range of listings, connect with sellers, and make informed decisions about their real estate investments.
+
+Whether you're selling a family home, searching for your dream property, or looking to invest in real estate opportunities, EstateExplorer provides the tools and support you need to succeed. Join us today and experience the future of real estate with EstateExplorer.
+
+ <p  className='mb-4 text-slate-700'>Welcome to EstateExplorer – where sellers meet buyers and real estate dreams come true.</p>
         </p>
         </div>
   )
